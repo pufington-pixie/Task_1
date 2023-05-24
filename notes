@@ -1,0 +1,8 @@
+// GetDB returns a database object
+func GetDB() (*sql.DB) {
+    db,err := config.ConnectDB()
+    if err!=nil{
+        log.Fatal(err)
+    }
+    return db
+}

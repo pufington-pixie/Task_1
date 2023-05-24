@@ -1,0 +1,15 @@
+create_table("project_services") {
+  t.Column("projectId", "integer", {}) 
+  t.Column("serviceId", "integer", {})  
+}
+add_foreign_key("project_services", "projectId", {"projects": ["id"]}, {
+    "name": "fk_project_services_projects",
+    "on_delete": "cascade" 
+})
+
+add_foreign_key("project_services", "serviceId", {"services": ["id"]}, {
+    "name": "fk_project_services_services",
+    "on_delete": "cascade" 
+})  
+
+
